@@ -23,7 +23,7 @@ BEXT="sb"
 #
 # if Debian [bookworm]
 # if Ubuntu [jammy, noble]
-DISTRIBUTION="bookworm"
+DISTRIBUTION="noble"
 
 # Distribution architecture (Debian only)
 #
@@ -33,7 +33,7 @@ DISTRIBUTION_ARCH="amd64"
 # Desktop environment
 #
 # [core, flux, xfce, xfce-ultra, xfce-puzzle, xfce-puzzle-base, lxqt, devel]
-DESKTOP_ENVIRONMENT="xfce"
+DESKTOP_ENVIRONMENT="lxqt"
 
 # System variant, indicates the used list of packages in modules
 #
@@ -49,7 +49,7 @@ COMP_TYPE="zstd"
 # Kernel type
 #
 # [none, default, rt, cloud]
-KERNEL_TYPE="default"
+KERNEL_TYPE="rt"
 
 # Linux kernel from backports
 #
