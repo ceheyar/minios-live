@@ -28,7 +28,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: minios-iso
-        path: build/iso/*.iso
+        path: build/iso/minios-*.iso
         compression-level: 9
 
     - name: Release
@@ -37,5 +37,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         name: minios-iso
-        files: build/iso/*.iso
+        files: build/iso/minios-*.iso
         tag_name: ${{ github.run_id }}
