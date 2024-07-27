@@ -29,36 +29,11 @@ jobs:
         path: build/iso/*.iso
         compression-level: 9
 
-  release:
-    needs: build
-    runs-on: ubuntu-24.04
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Download artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: minios-iso
-
     - name: Create Release
-      id: create_release
       uses: softprops/action-gh-release@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         name: minios-iso
+        files: minios-iso/*.iso
         tag_name: ${{ github.run_id }}
-
-    - name: Upload Release Assets
-      run: |
-        for iso in minios-iso/*.iso; do
-          asset_name=$(basename $iso)
-          echo "Uploading $asset_name"
-          curl \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Content-Type: $(file -b --mime-type $iso)" \
-            --data-binary @"$iso" \
-            "${{ steps.create_release.outputs.upload_url }}?name=$asset_name"
-        done
