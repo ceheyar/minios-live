@@ -14,7 +14,9 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
+        sudo apt-get upgrade
         sudo apt-get install -y debootstrap xorriso genisoimage binutils squashfs-tools grub-pc-bin grub-efi-amd64-bin dosfstools mtools xz-utils liblz4-tool zstd git curl rsync
+        sudo apt-get clean
 
     - name: Run build
       run: |
@@ -22,18 +24,18 @@ jobs:
         sudo ./minios-live -
         echo "Build completed."
 
-    - name: Archive build output
+    - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: minios-iso
         path: build/iso/*.iso
         compression-level: 9
 
-    - name: Create Release
+    - name: Release
       uses: softprops/action-gh-release@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         name: minios-iso
-        files: minios-iso/*.iso
+        files: build/iso/*.iso
         tag_name: ${{ github.run_id }}
