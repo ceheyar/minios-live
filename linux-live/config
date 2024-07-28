@@ -90,7 +90,7 @@ EXPORT_LOGS="false"
 # System locale
 #
 # [en_US, ru_RU, es_ES, pt_BR]
-LOCALE="en_US"
+LOCALE="id_ID"
 
 # If true, locales are generated for several languages defined in the LOCALES variable in minioslib
 #
