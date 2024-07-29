@@ -24,6 +24,7 @@ jobs:
         ln -s ../../scripts/10-devel/ linux-live/environments/lxqt/10-devel
         ln -s ../../scripts/10-google-chrome/ linux-live/environments/lxqt/10-google-chrome
         ln -s ../../scripts/10-gparted/ linux-live/environments/lxqt/10-gparted
+        ln -s ../../scripts/10-rescuezilla/ linux-live/environments/lxqt/10-rescuezilla
         ln -s ../../scripts/10-vlc/ linux-live/environments/lxqt/10-vlc
         ln -s ../../scripts/10-vscode/ linux-live/environments/lxqt/10-vscode
 
