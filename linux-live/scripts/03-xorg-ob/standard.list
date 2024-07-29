@@ -17,3 +17,4 @@ xdotool
 libdrm-intel1
 libgl1-mesa-dri
 libglu1-mesa
+mesa-vulkan-drivers
