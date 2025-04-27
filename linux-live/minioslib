@@ -65,7 +65,7 @@ common_variables() {
     stretch | buster | bullseye | bookworm | trixie | kali-rolling | sid | orel)
         DISTRIBUTION_TYPE="debian"
         ;;
-    bionic | focal | jammy | noble)
+    bionic | focal | jammy | noble | plucky)
         DISTRIBUTION_TYPE="ubuntu"
         ;;
     *)
@@ -78,7 +78,7 @@ common_variables() {
     stretch | buster | orel | bionic)
         DISTRIBUTION_PHASE="legacy"
         ;;
-    bullseye | bookworm | focal | jammy | noble)
+    bullseye | bookworm | focal | jammy | noble | plucky)
         DISTRIBUTION_PHASE="current"
         ;;
     trixie | kali-rolling | sid)
@@ -490,6 +490,7 @@ declare_locales() {
         ["en_US"]="us,English (US),,en,,"
         ["es_ES"]="es,Spanish,es-es,es,es,es"
         ["fr_FR"]="fr,French,fr,fr,fr,fr"
+        ["id_ID"]="us,English (US),id,id,id,id"
         ["it_IT"]="it,Italian,it,it,it,it"
         ["pt_BR"]="br,Portuguese (Brazil),pt-br,pt,pt-br,br"
         ["ru_RU"]="ru,Russian,ru,ru,ru,ru"
